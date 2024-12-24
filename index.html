@@ -65,54 +65,39 @@
             margin: 10px 0;
         }
 
-        .carousel-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
+        ul {
+            list-style-type: disc;
+            margin: 10px 0 10px 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+            color: var(--secondary-color);
         }
 
         .gif-section img {
-            max-width: 100%;
+            display: block;
+            max-width: 80%;
             height: auto;
+            margin: 20px auto;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .carousel {
-            position: relative;
-            max-width: 100%;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 10px;
         }
 
         .carousel img {
-            width: 100%;
-            display: none;
-        }
-
-        .carousel img.active {
             display: block;
-        }
-
-        .carousel-buttons {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 10px;
-        }
-
-        .carousel-buttons button {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 5px;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         footer {
@@ -133,30 +118,6 @@
             text-decoration: underline;
         }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const images = document.querySelectorAll('.carousel img');
-            let currentIndex = 0;
-
-            const updateCarousel = () => {
-                images.forEach((img, index) => {
-                    img.classList.toggle('active', index === currentIndex);
-                });
-            };
-
-            document.querySelector('.prev').addEventListener('click', () => {
-                currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
-                updateCarousel();
-            });
-
-            document.querySelector('.next').addEventListener('click', () => {
-                currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
-                updateCarousel();
-            });
-
-            updateCarousel();
-        });
-    </script>
 </head>
 <body>
     <header>
@@ -170,22 +131,31 @@
             <p>Palestrapp is a straightforward workout tracking app designed to make logging exercises and visualizing workout history as easy as possible. Its minimalist design and intuitive interface ensure you can focus on your fitness journey without unnecessary distractions.</p>
         </section>
 
-        <section class="carousel-container">
-            <div class="gif-section">
-                <img src="src/gif.gif" alt="Palestrapp in action">
-            </div>
+        <section class="features">
+            <h2>Main Features</h2>
+            <p>Here’s what makes Palestrapp stand out:</p>
+            <ul>
+                <li><strong>Home Screen:</strong> Navigate effortlessly between "Workout" and "History" with a clean, monochrome layout.</li>
+                <li><strong>Workout Recording:</strong> Log exercises with smart suggestions based on your past workouts.</li>
+                <li><strong>History Visualization:</strong> A calendar view highlighting workout days and providing quick access to details.</li>
+                <li><strong>Data Persistence:</strong> Your data is automatically saved, ensuring nothing gets lost.</li>
+            </ul>
+        </section>
 
+        <section class="gif-section">
+            <h2>App in Action</h2>
+            <img src="src/gif.gif" alt="Palestrapp in action">
+        </section>
+
+        <section class="gallery">
+            <h2>Gallery</h2>
+            <p>Explore some of the app’s key screens:</p>
             <div class="carousel">
-                <img src="src/1.png" alt="Screen 1" class="active">
+                <img src="src/1.png" alt="Screen 1">
                 <img src="src/2.png" alt="Screen 2">
                 <img src="src/4.png" alt="Screen 4">
                 <img src="src/5.png" alt="Screen 5">
                 <img src="src/6.png" alt="Screen 6">
-
-                <div class="carousel-buttons">
-                    <button class="prev">&#8249;</button>
-                    <button class="next">&#8250;</button>
-                </div>
             </div>
         </section>
     </div>

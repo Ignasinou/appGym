@@ -4,4 +4,4 @@ Palestrapp is a minimalist workout tracking app designed to make exercise loggin
 
 ## Key Features
 
-More information in here: [Palestrapp Live Demo](https://yourusername.github.io/palestrapp)
+More information in here: [Palestrapp Live Demo](https://ignasinou.github.io/appGym/)
